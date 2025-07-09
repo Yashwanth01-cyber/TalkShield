@@ -1,20 +1,64 @@
-# TalkShield 🔒📞
+# 🔒 TalkShield – Scam Call Analyzer
 
-**TalkShield** is an Android app designed to protect users—especially elderly people—from scam and spam calls by analyzing recent call logs and providing real-time warnings.
+**TalkShield** is a real-time scam/spam call analyzer designed especially for elderly users. It protects users from fraudulent calls by analyzing recent call logs and giving alerts for suspicious behavior.
 
-## 🛠️ Features
+---
 
-- ✅ Real-time scam/spam call detection
-- ✅ Simple UI/UX for elder-friendly use
-- ✅ Call scan and report buttons
-- ✅ Secure and lightweight app
+## 📱 App Preview
 
-## 📱 Screenshots
+![App Screenshot](preview.png) <!-- Replace with your actual image filename -->
 
-> ![App Preview](preview.png)
+---
 
-## 🚀 Getting Started
+## 🚀 Features
 
-1. Clone the repo:
-```bash
-git clone https://github.com/Yashwanth01-cyber/TalkShield.git
+- ✅ Real-time scam/spam detection
+- 📞 Analyze recent calls with one tap
+- 🛡️ Simple, clean UI/UX for senior-friendly use
+- 📍 Safe status indication with lock icons
+- 🚨 One-click scam report button
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Android Studio (Java/Kotlin + XML)
+- **UI**: Material Design Components
+- **Backend**: Local Android services *(can integrate with Flask server)*
+- **Build System**: Gradle
+
+---
+
+## 🧠 How It Works
+
+- The app checks recent call logs
+- Compares call patterns with known spam behavior
+- Displays a security icon and status
+- Users can manually report suspicious numbers
+
+---
+
+## 📂 Project Structure
+
+TalkShield/
+├── app/
+│ └── src/
+│ └── main/
+│ ├── java/...
+│ ├── res/
+│ │ └── layout/
+│ │ └── activity_main.xml
+│ └── AndroidManifest.xml
+├── build.gradle
+└── README.md
+
+
+
+## 📄 License
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+## 🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first.
+## 👤 Author
+Yaswanth  
+GitHub: [@Yashwanth01-cyber](https://github.com/Yashwanth01-cyber)
+
