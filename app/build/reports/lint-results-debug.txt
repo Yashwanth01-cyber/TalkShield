@@ -1,0 +1,274 @@
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 34
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 36 [GradleDependency]
+    compileSdk = 34
+    ~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:42: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.13.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:43: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:44: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:45: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:48: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\build.gradle.kts:49: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:9: Warning: Possible overdraw: Root element paints background #FFFFFF with a theme that also paints a background (inferred theme is @style/Theme.TalkShield) [Overdraw]
+    android:background="#FFFFFF"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:22: Warning: The resource R.dimen.fab_margin appears to be unused [UnusedResources]
+    <dimen name="fab_margin">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:25: Warning: The resource R.dimen.fab_bottom_padding appears to be unused [UnusedResources]
+    <dimen name="fab_bottom_padding">72dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:27: Warning: The resource R.dimen.plant_detail_app_bar_height appears to be unused [UnusedResources]
+    <dimen name="plant_detail_app_bar_height">278dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:29: Warning: The resource R.dimen.margin_normal appears to be unused [UnusedResources]
+    <dimen name="margin_normal">16dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:30: Warning: The resource R.dimen.margin_small appears to be unused [UnusedResources]
+    <dimen name="margin_small">8dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:31: Warning: The resource R.dimen.margin_extra_small appears to be unused [UnusedResources]
+    <dimen name="margin_extra_small">4dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:33: Warning: The resource R.dimen.padding_large appears to be unused [UnusedResources]
+    <dimen name="padding_large">48dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:35: Warning: The resource R.dimen.plant_item_image_height appears to be unused [UnusedResources]
+    <dimen name="plant_item_image_height">95dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:37: Warning: The resource R.dimen.card_side_margin appears to be unused [UnusedResources]
+    <dimen name="card_side_margin">12dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:38: Warning: The resource R.dimen.card_bottom_margin appears to be unused [UnusedResources]
+    <dimen name="card_bottom_margin">26dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:39: Warning: The resource R.dimen.card_elevation appears to be unused [UnusedResources]
+    <dimen name="card_elevation">2dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:40: Warning: The resource R.dimen.card_corner_radius appears to be unused [UnusedResources]
+    <dimen name="card_corner_radius">12dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:43: Warning: The resource R.dimen.toolbar_elevation appears to be unused [UnusedResources]
+    <dimen name="toolbar_elevation">5dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:46: Warning: The resource R.dimen.header_margin appears to be unused [UnusedResources]
+    <dimen name="header_margin">24dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:48: Warning: The resource R.dimen.gallery_header_margin appears to be unused [UnusedResources]
+    <dimen name="gallery_header_margin">72dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\dimens.xml:51: Warning: The resource R.dimen.plant_description_min_height appears to be unused [UnusedResources]
+    <dimen name="plant_description_min_height">555dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\mipmap-hdpi\ic_launcher_background.png: Warning: The resource R.mipmap.ic_launcher_background appears to be unused [UnusedResources]
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\mipmap-hdpi\ic_launcher_foreground.png: Warning: The resource R.mipmap.ic_launcher_foreground appears to be unused [UnusedResources]
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:20: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name" translatable="false">Sunflower</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:23: Warning: The resource R.string.menu_filter_by_grow_zone appears to be unused [UnusedResources]
+    <string name="menu_filter_by_grow_zone" translation_description="The label for the menu item to filter the displayed plants by grow zone.">Filter by grow zone</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:24: Warning: The resource R.string.my_garden_title appears to be unused [UnusedResources]
+    <string name="my_garden_title" translation_description="Title for the 'My garden' screen where the user can see the list of plants that have been added to their garden.">My garden</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:25: Warning: The resource R.string.plant_list_title appears to be unused [UnusedResources]
+    <string name="plant_list_title" translation_description="Title for the plant list screen where the user can see a list of plants available to add to their garden.">Plant list</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:26: Warning: The resource R.string.available appears to be unused [UnusedResources]
+    <string name="available" translation_description="Text for the header of the plant list page indicating the available plants for users to choose from.">Available Plants</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:27: Warning: The resource R.string.plant_details_title appears to be unused [UnusedResources]
+    <string name="plant_details_title" translation_description="Title for the plant details screen where the user can see the details for a specific plant.">Plant details</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:28: Warning: The resource R.string.add_plant appears to be unused [UnusedResources]
+    <string name="add_plant" translation_description="Button text that prompts user to navigate to the Plant List to add plants to their empty garden.">Add plant</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:29: Warning: The resource R.string.added_plant_to_garden appears to be unused [UnusedResources]
+    <string name="added_plant_to_garden" translation_description="Confirmation text that is shown when a user adds a plant to their empty garden.">Added plant to garden</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:30: Warning: The resource R.string.garden_empty appears to be unused [UnusedResources]
+    <string name="garden_empty" translation_description="Text that is shown on the 'My Garden' screen when no plants have been added to the user's garden">Your garden is empty</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:31: Warning: The resource R.string.plant_date_header appears to be unused [UnusedResources]
+    <string name="plant_date_header" translation_description="Text that is shown on each plant on the 'My Garden' screen which says the word Planted to show date of planting below">Planted</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:32: Warning: The resource R.string.watered_date_header appears to be unused [UnusedResources]
+    <string name="watered_date_header" translation_description="Text that is shown on each plant on the 'My Garden' screen which says the word Last Watered to show date of last watering below">Last Watered</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:33: Warning: The resource R.string.menu_item_share_plant appears to be unused [UnusedResources]
+    <string name="menu_item_share_plant" translation_description="The label for the Share menu item">Share</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:34: Warning: The resource R.string.share_text_plant appears to be unused [UnusedResources]
+    <string name="share_text_plant" translation_description="The default messaged used when sharing a plant on SNS, etc.">Check out the %s plant in the Android Sunflower app</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:35: Warning: The resource R.string.gallery_title appears to be unused [UnusedResources]
+    <string name="gallery_title" translation_description="Title for the photo gallery screen">Photos by Unsplash</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:38: Warning: The resource R.string.watering_needs_prefix appears to be unused [UnusedResources]
+    <string name="watering_needs_prefix" translation_description="Prefix for the text describing how often a plant should be watered. Used in combination with watering_needs_suffix.">Watering needs</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:39: Warning: The resource R.plurals.watering_needs_suffix appears to be unused [UnusedResources]
+    <plurals name="watering_needs_suffix">
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:44: Warning: The resource R.plurals.watering_next appears to be unused [UnusedResources]
+    <plurals name="watering_next">
+             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:50: Warning: The resource R.string.a11y_plant_item_image appears to be unused [UnusedResources]
+    <string name="a11y_plant_item_image" translation_description="Accessibility text for each of the plant images shown in the 'My garden' and 'Plant list' screens.">Picture of plant</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:51: Warning: The resource R.string.a11y_back appears to be unused [UnusedResources]
+    <string name="a11y_back" translatable="false">Navigate up</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:52: Warning: The resource R.string.gallery_content_description appears to be unused [UnusedResources]
+    <string name="gallery_content_description" translation_description="Content description for the clickable image to navigate to the gallery screen">Navigate to gallery screen</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\values\strings.xml:53: Warning: The resource R.string.plant_detail_image_content_description appears to be unused [UnusedResources]
+    <string name="plant_detail_image_content_description" translation_description="Content description for the header / hero image that is show at the top of the plant detail screen.">Image of plant</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:18: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml:18: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:19: Warning: Hardcoded string "TalkShield", should use @string resource [HardcodedText]
+        android:text="TalkShield"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:32: Warning: Hardcoded string "Safe status", should use @string resource [HardcodedText]
+        android:contentDescription="Safe status"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:40: Warning: Hardcoded string "No suspicious call detected", should use @string resource [HardcodedText]
+        android:text="No suspicious call detected"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:50: Warning: Hardcoded string "Scan Recent Calls", should use @string resource [HardcodedText]
+        android:text="Scan Recent Calls"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\yashw\AndroidStudioProjects\TalkShield\app\src\main\res\layout\activity_main.xml:61: Warning: Hardcoded string "Report Scam Call", should use @string resource [HardcodedText]
+        android:text="Report Scam Call"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 55 warnings
